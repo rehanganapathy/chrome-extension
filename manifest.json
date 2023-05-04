@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "CSV to Excel Converter",
+    "version": "1.0",
+    "description": "Converts CSV files to Excel files when dragged onto a Google Sheets page.",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "index.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs",
+        "downloads",
+        "activeTab",
+        "storage",
+        "notifications",
+        "identity"
+    ],
+    "oauth2": {
+        "client_id": "184344738888-2tolpeom0h4s46nsuu07b3mafhqa3po1.apps.googleusercontent.com",
+        "scopes": [
+            "https://www.googleapis.com/auth/spreadsheets"
+        ]
+    }
+}
